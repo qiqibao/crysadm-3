@@ -16,11 +16,11 @@
 ***
 ##PS:<br>
 ***
-run.sh是运行脚本，down.sh是停止脚本，setup.sh是安装环境脚本。
-树莓派 开机执行脚本
-sudo nano /etc/rc.local
-在最后加入
-sudo sh /home/pi/crysadm/run.sh &
+run.sh是运行脚本，down.sh是停止脚本，setup.sh是安装环境脚本。<br>
+树莓派 开机执行脚本<br>
+sudo nano /etc/rc.local<br>
+在exit 0 前加入<br>
+sudo sh /home/pi/crysadm/run.sh &<br>
 ***
 
 ***   
