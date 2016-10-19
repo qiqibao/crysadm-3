@@ -24,7 +24,6 @@ RUN git clone https://github.com/qiqibao/crysadm-3.git
 
 #安装python，redis
 RUN apt-get install -y python3.4 python3.4-dev redis-server
-RUN pip3.4 install redis && sudo pip3.4 install requests && sudo pip3.4 install flask
 
 #复制配置文件
 RUN mv /etc/nginx/sites-available/default ./
