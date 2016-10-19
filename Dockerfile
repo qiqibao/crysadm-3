@@ -27,7 +27,6 @@ RUN apt-get install -y python3.4 python3.4-dev redis-server
 
 #复制配置文件
 RUN mv /etc/nginx/sites-available/default ./
-COPY default /etc/nginx/sites-available/
 RUN apt-get clean 
 
 #脚本加运行权限
