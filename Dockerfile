@@ -18,15 +18,19 @@ RUN apt-get update && apt-get install -y git wget sudo vim nginx curl
 RUN mkdir /app 
 RUN cd /app
 #下载云监工源代码
-RUN git clone https://github.com/qiqibao/crysadm-3.git
+RUN git clone https://github.com/im1986/crysadm.git
 #添加计划任务每小时运行云监工
 #RUN echo '0 * * * * root sh /app/crysadm/run.sh' >> /etc/crontab
 
 #安装python，redis
 RUN apt-get install -y python3.4 python3.4-dev redis-server
+RUN chmod +x ./crysadm/get-pip.py
+RUN python3.4 ./crysadm/get-pip.py
+RUN pip3.4 install redis && sudo pip3.4 install requests && sudo pip3.4 install flask
 
 #复制配置文件
 RUN mv /etc/nginx/sites-available/default ./
+COPY default /etc/nginx/sites-available/
 RUN apt-get clean 
 
 #脚本加运行权限
