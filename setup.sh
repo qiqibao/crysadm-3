@@ -21,6 +21,8 @@ sudo pip3.4 install redis && sudo pip3.4 install requests && sudo pip3.4 install
 #安装redis-server
 sudo apt-get install -y redis-server 
 
+#添加树莓派开机启动
+sudo sh -c 'echo sudo sh /home/pi/crysadm/run.sh & >> /etc/rc.local'
 
 #运行云监工
 
